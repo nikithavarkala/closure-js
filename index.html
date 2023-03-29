@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fun.css">
+</head>
+<body>
+    <h2>Js-Handson6</h2>
+    <p>&cir; Objects</p>
+    <h3>Print the output:</h3>
+    <pre>
+        function counter(){
+            var counter = 0;
+        
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+        
+            return IncreaseCounter;
+        }
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());
+    </pre>
+    <h4>Output:<span>1 2 3 4</span></h4>
+    <h3>Print output:</h3>
+    <pre>
+        let count = 0;
+        (function () {
+          if (count === 0) {
+            let count = 1;
+            console.log(count); // What is logged?
+          }
+          console.log(count); // What is logged?
+        })(); 
+    </pre>
+    <h4>output:<span>1 0</span></h4>
+    <h3>print output:</h3>
+    <pre>
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+              console.log(i); // What is logged?
+            }, 1000);
+          }
+    </pre>
+    <h4>output:<span>3 3 3</span></h4>
+    <p>Explanation:</p>
+    <i>As above code runs as asynchronous i.e, the loop and setTimeout func, for loop doesn't wait for setTimeout() to complete and continous its loop - there i value will be 0,1,2,3.but the func(setTimeout) has been called for 3 times in the execution-context.thus the i present updated value will be printed(3 times as per loop condition). </i>
+    <h3>Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</h3>
+    <pre>
+        function len(l){
+            function area(b){
+                console.log("Area of Rectangle:",l*b);
+            }
+            area(5);
+        }
+        len(10);
+    </pre>
+    <h3>Take a variable in outer function and create an inner function to increase the counter every time it is called.</h3>
+    <pre>
+        function outer(){
+            var count=0;
+            function inner(){
+                count++;
+                console.log(count);
+            
+            }
+            return inner;
+        }
+        const inc=outer();
+        inc();
+        inc();
+        inc();        
+    </pre>
+    <h3>Print output:</h3>
+    <pre>
+    var a = 12;
+    (function () {
+        alert(a);
+    })();
+    </pre></h3>
+    <h4>output:<span>12</span></h4>
+    <h3>Print output:</h3>
+    <pre>
+    var a = 10;
+    var x = (function () {
+    var a = 12;
+    return function () {
+        alert(a);
+    };
+    })();
+    x();
+    </pre>
+    <h4>output:<span>12</span></h4>
+    <h3>Print output:</h3>
+    <pre>
+        function outer(){
+            var count=0;
+            function inner(){
+                count++;
+                console.log(count);
+            
+            }
+            return inner;
+        }
+        const inc=outer();
+        inc();
+        inc();
+        inc();        
+    </pre>
+    <h4>output:<span>1 2 3</span></h4>
+</body>
+</html>
